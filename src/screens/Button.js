@@ -1,28 +1,29 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text, SafeAreaView,Pressable } from 'react-native'; 
+import { StyleSheet, View, Image, Text, SafeAreaView,Pressable, Button,Alert } from 'react-native';  
 import { StatusBar } from 'expo-status-bar';
 import { COLORS, SIZES } from '../content/theme'; 
 
+
 const icon = require('../../assets/dml-logo.png'); 
 
-const MainScreen = () => {
+const Button = () => {
     const handleImagePress = () => {
         console.log('Imagen presionada! Debería navegar a la pantalla de Login.');
       };
-    
+     const onPress = () => {
+    Alert.alert('si muchisimo');
+  };
 
   return (
-    <><SafeAreaView style={styles.safeArea}>
-          <StatusBar style="light" backgroundColor={COLORS.primaryBlack} />
-          <Pressable onPress={handleImagePress}>
-          <View style={styles.container}>
-              <Image
-                  source={icon}
-                  style={styles.logo} />
-          </View>
-          </Pressable>
+    
+      <View style={styles.container}> <Button  onPress={onPress} style= {styles.brandText}title="diego es gay?" /></View>
+          
+         
+         
 
-      </SafeAreaView><Text style={styles.brandText}>DLM</Text></>
+    
+      
+
   );
 };
 
@@ -43,6 +44,9 @@ const styles = StyleSheet.create({
     height: SIZES.logoHeight,  
     marginBottom: SIZES.padding, 
   },
+    buttonContainer: {
+    margin: 20,
+  },
   brandText: {
     position: 'absolute',
     left: 0,
@@ -57,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainScreen;
+export default Button;
