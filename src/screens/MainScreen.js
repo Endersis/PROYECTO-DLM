@@ -5,9 +5,10 @@ import { COLORS, SIZES } from '../content/theme';
 
 const icon = require('../assets/dml-logo.png'); 
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
     const handleImagePress = () => {
         console.log('Imagen presionada! Debería navegar a la pantalla de Login.');
+        navigation.navigate('Login');
       };
     
 
