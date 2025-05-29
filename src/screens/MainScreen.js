@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text, SafeAreaView,Pressable } from 'react-nat
 import { StatusBar } from 'expo-status-bar';
 import { COLORS, SIZES } from '../content/theme'; 
 
-const icon = require('../assets/dml-logo.png'); 
+const icon = require('../../assets/dml-logo.png'); 
 
 const MainScreen = ({navigation}) => {
     const handleImagePress = () => {

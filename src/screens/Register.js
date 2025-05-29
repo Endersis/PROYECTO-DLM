@@ -35,13 +35,14 @@ const SIZES = {
   buttonRadius: 8,
 };
 
-const LoginScreen = ({ navigation }) => { 
+const RegisterScreen = ({ navigation }) => { 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
-    console.log('Login attempt with:', username, password);
+    console.log('Login attempt with:', username, password,email);
     
   };
 
@@ -52,7 +53,6 @@ const LoginScreen = ({ navigation }) => {
 
   const navigateToSignup = () => {
     console.log('Navigate to Signup screen');
-    navigation.navigate('Signup');
     
   };
 
@@ -65,18 +65,28 @@ const LoginScreen = ({ navigation }) => {
       >
         <ScrollView contentContainerStyle={styles.scrollViewContainer}>
           <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
-            <Text style={styles.subtitle}>¡Bienvenido Compañero!</Text>
+            <Text style={styles.title}>Signup</Text>
 
             <TextInput
               style={styles.input}
-              placeholder="Enter Your Username / Email"
+              placeholder="Enter Your Email"
+              placeholderTextColor={COLORS.textGray}
+              value={email}
+              onChangeText={setUsername}
+              keyboardType="email-address"
+              autoCapitalize="none"
+            />
+            
+            <TextInput
+              style={styles.input}
+              placeholder="Enter Your Username"
               placeholderTextColor={COLORS.textGray}
               value={username}
               onChangeText={setUsername}
               keyboardType="email-address"
               autoCapitalize="none"
             />
+            
 
             <View style={styles.passwordContainer}>
               <TextInput
@@ -100,12 +110,7 @@ const LoginScreen = ({ navigation }) => {
               <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>
 
-            <View style={styles.signupContainer}>
-              <Text style={styles.signupText}>Don't have an account? </Text>
-              <TouchableOpacity onPress={navigateToSignup}>
-                <Text style={styles.signupLink}>Signup</Text>
-              </TouchableOpacity>
-            </View>
+           
 
             <TouchableOpacity style={styles.googleButton} onPress={handleGoogleLogin}>
              
@@ -113,7 +118,7 @@ const LoginScreen = ({ navigation }) => {
                 source={require('../../assets/2000px-Google_G_Logo.svg_.png')} 
                 style={styles.googleLogo}
               />
-              <Text style={styles.googleButtonText}>Login with Google</Text>
+              <Text style={styles.googleButtonText}>Signup with Google</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -145,7 +150,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.h1,
     fontWeight: 'bold',
     color: COLORS.textBlack,
-    marginBottom: SIZES.base,
+    marginBottom: 30,
     textAlign: 'center',
   },
   subtitle: {
@@ -239,4 +244,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default RegisterScreen;
