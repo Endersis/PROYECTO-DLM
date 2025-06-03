@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MainScreen from './screens/MainScreen';
+import ProfileScreen from './screens/Perfil/ProfileScreen';
+import GeneralTabScreen from './screens/Perfil/GeneralTapScreen';
+import { NavigationContainer } from '@react-navigation/native';
 export default function App() {
   return (
     
-       <MainScreen/>
-    
+      <NavigationContainer>
+      <ProfileScreen /> 
+   
+    </NavigationContainer>
       );
 }
   
