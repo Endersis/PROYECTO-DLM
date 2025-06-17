@@ -17,21 +17,20 @@ const COLORS = {
 const SIZES = {
   padding: 20,
   avatarSize: 100,
-  tabHeight: 45,                 // Altura para las "cajas" de las pestañas
-  tabBorderRadius: 8,            // Radio de borde para las "cajas" y la barra
-  tabBarHorizontalMargin: 20,    // Margen a los lados de la barra de pestañas completa
-  tabSpacingBetweenItems: 8,     // Espacio deseado ENTRE las dos pestañas
-  // Agrega otros SIZES que puedas necesitar, como h1, fontSize
-  h1: 30, // Ejemplo
-  fontSize: 16, // Ejemplo
+  tabHeight: 45,               
+  tabBorderRadius: 8,           
+  tabBarHorizontalMargin: 20,    
+  tabSpacingBetweenItems: 8,     
+
+  h1: 30, 
+  fontSize: 16, 
 };
-// --- Fin de Constantes ---
+
 
 const { width } = Dimensions.get('window');
 
-// Importa tus pantallas de pestaña (¡ASEGÚRATE DE QUE LOS NOMBRES DE ARCHIVO COINCIDAN!)
-import GeneralTabScreen from './GeneralTapScreen';// Verifica si es GeneralTapScreen o GeneralTabScreen
-import SenasTabScreen from './SenasTapScreen';    // Verifica si es SenasTapScreen o SenasTabScreen
+import GeneralTabScreen from './GeneralTapScreen';
+import SenasTabScreen from './SenasTapScreen';   
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -40,7 +39,7 @@ const ProfileScreen = ({ navigation }) => {
     name: 'Usuario Ejemplo',
     email: 'usuario@ejemplo.com',
     avatarUrl: 'https://via.placeholder.com/150/000000/FFFFFF/?text=User',
-    senasCount: 120,
+    senasCount: 200,
   });
 
   const handleSaveChanges = (updatedData) => { console.log('Saving changes:', updatedData); setUserData(prevData => ({ ...prevData, ...updatedData })); };
@@ -94,6 +93,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: COLORS.white,
+    paddingTop: 150,
   },
   profileHeader: {
     alignItems: 'center',

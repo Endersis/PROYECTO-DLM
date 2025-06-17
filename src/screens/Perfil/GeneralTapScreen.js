@@ -121,22 +121,7 @@ const styles = StyleSheet.create({
     color: '#A0A0A0',
   },
   saveButton: { // Este ya era rojo con texto blanco
-    backgroundColor: COLORS.primaryRed,
-    paddingVertical: SIZES.padding / 1.5,
-    borderRadius: SIZES.buttonRadius,
-    alignItems: 'center',
-    width: '100%', // O un ancho específico si lo quieres más pequeño
-    // alignSelf: 'center', // Si usas un ancho específico y quieres centrarlo
-    marginTop: SIZES.padding /2, // Espacio arriba del botón
-  },
-  saveButtonText: {
-    color: COLORS.white,
-    fontSize: SIZES.fontSize,
-    fontWeight: 'bold',
-  },
-  // --- MODIFICACIONES AQUÍ para el botón "Edit Profile" ---
-  editButton: {
-    backgroundColor: COLORS.primaryRed, // Fondo rojo
+     backgroundColor: COLORS.primaryRed, // Fondo rojo
     paddingVertical: SIZES.padding / 2,    // Un poco menos de padding vertical para hacerlo más chico en altura
     paddingHorizontal: SIZES.padding * 1.5, // Padding horizontal para el ancho del texto interno
     borderRadius: SIZES.buttonRadius,
@@ -144,17 +129,29 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Para centrar el texto si el padding lo hace más alto
     alignSelf: 'center', // Para que el botón no ocupe todo el ancho, sino que se centre
     // width: '60%', // O puedes darle un ancho porcentual o fijo si prefieres
-    marginTop: SIZES.padding /2, // Espacio arriba del botón
-    // Ya no necesita borde si es rojo sólido:
-    // borderWidth: 1, 
-    // borderColor: COLORS.primaryRed,
+    marginTop: SIZES.padding /2,// Espacio arriba del botón
   },
-  editButtonText: {
-    color: COLORS.white, // Texto blanco
-    fontSize: SIZES.fontSize - 1, // Un poco más pequeño el texto si quieres
+  saveButtonText: {
+    color: COLORS.white,
+    fontSize: SIZES.fontSize,
     fontWeight: 'bold',
   },
-  // --- FIN DE MODIFICACIONES ---
+  editButton: {
+    backgroundColor: COLORS.primaryRed, 
+    paddingVertical: SIZES.padding / 2,    
+    paddingHorizontal: SIZES.padding * 1.5, 
+    borderRadius: SIZES.buttonRadius,
+    alignItems: 'center',
+    justifyContent: 'center', 
+    alignSelf: 'center', 
+    marginTop: SIZES.padding /2, 
+   
+  },
+  editButtonText: {
+    color: COLORS.white, 
+    fontSize: SIZES.fontSize - 1, 
+    fontWeight: 'bold',
+  }
 });
 
 export default GeneralTabScreen;

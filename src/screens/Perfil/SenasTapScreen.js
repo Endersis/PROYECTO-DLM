@@ -1,19 +1,26 @@
 // src/screens/SenasTabScreen.js
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; // Para las estrellas
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const COLORS = { textBlack: '#222', textGray: '#666', primaryRed: '#E53935', white: '#FFF' };
-const SIZES = { padding: 20, fontSize: 16, h2: 20 };
+const COLORS = {
+  textBlack: '#222',
+  textGray: '#666',
+  primaryRed: '#E53935',
+  white: '#FFF'
+};
 
-const SenasTabScreen = ({ senasCount }) => { // senasCount vendría como prop
-  const MAX_STARS = 3;
-  let starsToDisplay = 0;
+const SIZES = {
+  padding: 20,
+  fontSize: 16,
+  h2: 20
+};
 
-  // Lógica simple para las estrellas (ajusta según tus criterios)
-  if (senasCount >= 100) starsToDisplay = 3;
-  else if (senasCount >= 50) starsToDisplay = 2;
-  else if (senasCount >= 10) starsToDisplay = 1;
+const SenasTabScreen = ({ senasCount }) => {
+  const MAX_STARS = 5;
+  
+ 
+  const starsToDisplay = Math.min(Math.floor(senasCount / 100), MAX_STARS);
 
   const renderStars = () => {
     let stars = [];
@@ -35,7 +42,6 @@ const SenasTabScreen = ({ senasCount }) => { // senasCount vendría como prop
     <View style={styles.container}>
       <Text style={styles.headerText}>SEÑAS EMITIDAS</Text>
       <Text style={styles.descriptionText}>
-        {/* Podrías hacer este texto dinámico si lo deseas */}
         La cantidad de señas emitidas por este usuario es {senasCount > 100 ? "mayor a 100" : `de ${senasCount}`}.
       </Text>
       <Text style={styles.levelHeader}>LEVEL</Text>
