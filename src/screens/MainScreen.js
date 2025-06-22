@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text, SafeAreaView,Pressable } from 'react-native'; 
 import { StatusBar } from 'expo-status-bar';
 import { COLORS, SIZES } from '../content/theme'; 
+import CustomHeader from './CustomHeader';
 
 const icon = require('../../assets/dml-logo.png'); 
 
