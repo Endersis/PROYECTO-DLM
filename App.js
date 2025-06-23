@@ -1,14 +1,13 @@
-import Menu from './src/screens/Menu';
-import MainScreen from './src/screens/MainScreen';
-import SenaScreen from './src/screens/SenaScreen';
-import CatalogoScreen from './src/screens/CatalogoScreen'; 
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './src/AppNavigator/AppNavigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context'; // <-- Asegúrate de tener esto
+
 export default function App() {
   return (
-    
-      // <MainScreen/>
-      //Menu/>
-      <SenaScreen/>
-      );
+    <SafeAreaProvider> {/* <-- Envuelve con SafeAreaProvider */}
+      <NavigationContainer>
+        <AppNavigator/>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
-  
-

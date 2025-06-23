@@ -20,9 +20,8 @@ const user = {
    avatar: require('../../assets/Ejemplo1.png'),
 };
 
-const Menu = () => {
+const Menu = ({navigation}) => {
   const drawer = useRef(null);
-
   const navigationView = () => (
     <SafeAreaView style={[styles.container, styles.navigationContainer]}>
       <Image source={user.avatar} style={styles.avatar} />
@@ -31,7 +30,7 @@ const Menu = () => {
 
       <Separator />
       <Pressable
-        onPress={() => navigation.navigate("Destacados")}
+        
         style={({ pressed }) => [
           styles.button,
           pressed && styles.buttonPressed, // ← estilo condicional
@@ -41,7 +40,7 @@ const Menu = () => {
         <Text style={styles.buttonText}>Perfil</Text>
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("Destacados")}
+     
         style={({ pressed }) => [
           styles.button,
           pressed && styles.buttonPressed, // ← estilo condicional
@@ -51,7 +50,7 @@ const Menu = () => {
         <Text style={styles.buttonText}>DLM</Text>
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("Destacados")}
+
         style={({ pressed }) => [
           styles.button,
           pressed && styles.buttonPressed, // ← estilo condicional
@@ -61,7 +60,7 @@ const Menu = () => {
         <Text style={styles.buttonText}>Destacados</Text>
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("Destacados")}
+      
         style={({ pressed }) => [
           styles.button,
           pressed && styles.buttonPressed, // ← estilo condicional

@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     console.log('Login attempt with:', username, password);
-    
+    navigation.navigate("Menu")
   };
 
   const handleGoogleLogin = () => {

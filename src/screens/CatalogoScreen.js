@@ -8,7 +8,7 @@ import {
   ScrollView,
   Dimensions,
 } from "react-native";
-
+import Menu from "./Menu";
 const { width } = Dimensions.get("window");
 
 const SENAS_DATA = [
@@ -86,7 +86,7 @@ const SENAS_DATA = [
   },
 ];
 
-export default function CatalogoScreen() {
+export default function CatalogoScreen({ navigation }) {
   const [search, setSearch] = useState("");
   const [data, setData] = useState(SENAS_DATA);
 
